@@ -1,73 +1,47 @@
 <template>
-	<div class="topbar shadow">
+	<!-- <header class="topbar shadow">
 		<h2>EC STUDENT SENTIMENT</h2>
 		<div class="dropdown">
 			<DropdownMenu :menu-items="socials" />
 		</div>
-	</div>
-	<div class="vh100" style="display: none">
-		<div class="introduction">
-			<p class="breadtext shadow">{{ introduction }}</p>
-		</div>
-	</div>
-	<div class="" style="display: block; padding-top: 5rem">
+	</header> -->
+	<!-- <WelcomeView :introduction="introduction" /> -->
+	<section class="" style="display: block; padding-top: 5rem">
 		<div class="">
 			<MainOverviewChart />
 		</div>
-	</div>
-	<div class="vh100">
-		<div class="description">
-			<div class="purpose breadtext shadow">
-				<h3>Purpose</h3>
-				<p>{{ purpose }}</p>
-			</div>
-			<div class="method breadtext shadow">
-				<h3>Methodology</h3>
-				<p>{{ method }}</p>
-			</div>
-			<div class="result breadtext shadow">
-				<h3>Result</h3>
-				<p>{{ result }}</p>
-			</div>
-			<div class="conclusion breadtext shadow">
-				<h3>Conclusion</h3>
-				<p>{{ conclusion }}</p>
-			</div>
-		</div>
-	</div>
-	<div class="vh100">
-		<div class="progress-journal">
-			<h2>Progress Journal</h2>
-			<div class="initialSteps breadtext shadow">
-				<h3>Initial Steps</h3>
-				<p>{{ initialSteps }}</p>
-			</div>
-			<div class="dataCollection breadtext shadow">
-				<h3>Data Collection</h3>
-				<p>{{ dataCollection }}</p>
-			</div>
-			<div class="dataCleaning breadtext shadow">
-				<h3>Data Cleaning</h3>
-				<p>{{ dataCleaning }}</p>
-			</div>
-			<div class="dataAnalysis breadtext shadow">
-				<h3>Data Analysis</h3>
-				<p>{{ dataAnalysis }}</p>
-			</div>
-		</div>
-	</div>
+	</section>
+	<!-- <DescriptionSection
+		:purpose="purpose"
+		:method="method"
+		:result="result"
+		:conclusion="conclusion"
+	/>
+	<ProgressJournal
+		:initial-steps="initialSteps"
+		:data-collection="dataCollection"
+		:data-cleaning="dataCleaning"
+		:data-analysis="dataAnalysis"
+	/> -->
 </template>
 
 <script>
-import DropdownMenu from './components/DropdownMenu.vue';
+// import DropdownMenu from './components/DropdownMenu.vue';
 import { textAssets } from './assets/text-assets.ts';
 import MainOverviewChart from './components/MainOverviewChart.vue';
+// import WelcomeView from './components/WelcomeView.vue';
+// import DescriptionSection from './components/DescriptionSection.vue';
+// import ProgressJournal from './components/ProgressJournal.vue';
+import LocomotiveScroll from 'locomotive-scroll';
 
 export default {
 	name: 'App',
 	components: {
-		DropdownMenu,
+		// DropdownMenu,
 		MainOverviewChart,
+		// WelcomeView,
+		// DescriptionSection,
+		// ProgressJournal,
 	},
 	data() {
 		return {
@@ -83,6 +57,18 @@ export default {
 			dataAnalysis: textAssets.dataAnalysis,
 		};
 	},
+	methods: {
+		setLocomotiveScroll() {
+			this.scroll = new LocomotiveScroll({
+				el: document.querySelector('[data-scroll-container]'),
+				smooth: true,
+				direction: 'horizontal',
+			});
+		},
+	},
+	// mounted() {
+	// 	this.setLocomotiveScroll();
+	// },
 };
 </script>
 

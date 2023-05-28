@@ -49,3 +49,12 @@ A notable aspect of the script is the usage of the "temperature" parameter in th
 The resulting analysis is then saved to a file, `output/sum_analysis.json`, for further use.
 
 Refer to `interpreter.py` for the detailed code.
+
+## Frontend Development
+
+In order to visually represent the analyzed data and make it accessible to users, a web-based frontend was developed using Vue3 and Chart.js, along with the Vue Chartjs wrapper. This facilitates the creation of dynamic, interactive charts that display the sentiment analysis data.
+
+Tools and Libraries
+Vue3 is a progressive JavaScript framework for building user interfaces, chosen for its versatility and the ability to create reusable custom components. The Vue Chartjs wrapper was used to integrate the Chart.js library within the Vue3 framework, enabling the use of reactive, customizable charts within the application.
+
+Chart.js is a powerful data visualization library for creating flexible and interactive charts. In this project, it was used to visualize various aspects of the sentiment analysis data, such as sentiment trends over time, distribution of different emotions, and discussion themes.
