@@ -1,5 +1,10 @@
 <template>
-	<Line :options="chartOptions" :data="chartData" />
+	<section data-scroll-section>
+		<div class="container">
+			<h1>Sentiment overview</h1>
+			<Line :options="chartOptions" :data="chartData" />
+		</div>
+	</section>
 </template>
 
 <script>
@@ -97,3 +102,22 @@ export default {
 	},
 };
 </script>
+<style lang="scss" scoped>
+section {
+	padding-top: 9rem;
+	padding-bottom: 9rem;
+	display: grid;
+	place-items: center;
+	background-color: #f5ebe0;
+	.container {
+		width: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		max-width: 1920px;
+	}
+}
+h1 {
+	text-align: center;
+}
+</style>
