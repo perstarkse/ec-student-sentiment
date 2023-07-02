@@ -68,6 +68,10 @@ export default {
 </script>
 
 <style lang="scss">
+@font-face {
+	font-family: 'newakeFont';
+	src: url('~@/assets/fonts/Newake-Font-Demo.otf') format('opentype');
+}
 main {
 	background-image: url('@/assets/gradient2.jpg');
 	background-size: cover; /* Cover the entire space of the element */

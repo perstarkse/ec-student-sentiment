@@ -41,10 +41,13 @@ section {
 			height: 250px;
 		}
 		h1 {
+			font-family: 'newakeFont';
+			font-size: 3rem;
 			margin-bottom: 2rem;
 		}
 		p {
 			margin-bottom: 2rem;
+			font-family: 'sans-serif';
 		}
 	}
 }

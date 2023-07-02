@@ -115,9 +115,12 @@ section {
 		flex-direction: column;
 		align-items: center;
 		max-width: 1920px;
+		h1 {
+			text-align: center;
+			font-size: 3rem;
+			font-family: 'newakeFont';
+			margin-bottom: 1rem;
+		}
 	}
-}
-h1 {
-	text-align: center;
 }
 </style>

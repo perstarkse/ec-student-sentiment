@@ -52,6 +52,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '../mixins.scss';
 section {
 	/* background-color: #e9c46a; */
 	padding-top: 8rem;
@@ -61,19 +62,43 @@ section {
 	.container {
 		position: relative;
 		max-width: 1920px;
-		padding-left: 5rem;
-		padding-right: 5rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		@include breakpoint('desktop') {
+			padding-left: 5rem;
+			padding-right: 5rem;
+		}
 		* {
-			padding-right: 10rem;
+			@include breakpoint('desktop') {
+				padding-right: 10rem;
+			}
+			padding-right: 0rem;
 		}
 		img {
+			@include breakpoint('desktop') {
+				display: block;
+			}
+			display: none;
 			position: absolute;
 			top: 50px;
 			right: -50px;
 			height: 250px;
 		}
+		p {
+			font-family: 'sans-serif';
+		}
+		h2 {
+			font-family: 'newakeFont';
+			font-size: 3rem;
+			margin-bottom: 1rem;
+			@include breakpoint('desktop') {
+				font-size: 5rem;
+			}
+		}
 		h3 {
-			margin: 1rem 0;
+			margin-bottom: 0.6rem;
+			margin-top: 1.5rem;
+			font-family: 'newakeFont';
 		}
 	}
 }

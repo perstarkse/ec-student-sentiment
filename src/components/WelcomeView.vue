@@ -4,10 +4,7 @@
 			<div class="container">
 				<div class="title-holder" data-scroll-speed="0.5" data-scroll>
 					<h1>Student Sentiment</h1>
-					<h3>
-						Details about the student sentiment for the fullstack developer
-						course.
-					</h3>
+					<h3>Student sentiment for the fullstack developer course.</h3>
 				</div>
 				<div class="img-holder">
 					<img
@@ -84,10 +81,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '../mixins.scss';
-@font-face {
-	font-family: 'newakeFont';
-	src: url('~@/assets/fonts/Newake-Font-Demo.otf') format('opentype');
-}
+
 section {
 	/* background-color: #2a9d8f; */
 	display: flex;
@@ -103,6 +97,10 @@ section {
 	.title-holder {
 		@include breakpoint('desktop') {
 			margin-right: 10rem;
+			margin-left: 2rem;
+		}
+		@include breakpoint('xlarge') {
+			margin-right: 30rem;
 			margin-left: 2rem;
 		}
 		margin-left: 1rem;
