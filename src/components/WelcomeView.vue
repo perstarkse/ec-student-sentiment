@@ -2,14 +2,22 @@
 	<main>
 		<section data-scroll data-scroll-speed="1.5" data-scroll-section>
 			<div class="container">
-				<h1 data-scroll-speed="1.5" data-scroll>
-					EC Student Sentiment Analysis
-					<br />
-					Details about the student sentiment for the fullstack developer
-					course.
-				</h1>
-
-				<div class="image-holder">
+				<div class="title-holder" data-scroll-speed="0.5" data-scroll>
+					<h1>Student Sentiment</h1>
+					<h3>
+						Details about the student sentiment for the fullstack developer
+						course.
+					</h3>
+				</div>
+				<div class="img-holder">
+					<img
+						data-scroll
+						data-scroll-speed="2"
+						src="../assets/undraw-chart.svg"
+						alt="chart"
+					/>
+				</div>
+				<div class="image-holder" style="display: none">
 					<img
 						data-scroll
 						data-scroll-speed="4"
@@ -60,17 +68,28 @@
 </template>
 
 <script>
+import undrawChart from '@/assets/undraw-chart.svg';
+
 export default {
 	name: 'WelcomeView',
 	methods: {},
+	components: {},
+	data() {
+		return {
+			undrawChart,
+		};
+	},
 };
 </script>
 
 <style lang="scss" scoped>
 @import '../mixins.scss';
-
+@font-face {
+	font-family: 'newakeFont';
+	src: url('~@/assets/fonts/Newake-Font-Demo.otf') format('opentype');
+}
 section {
-	background-color: #2a9d8f;
+	/* background-color: #2a9d8f; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -81,23 +100,50 @@ section {
 	place-items: center;
 	position: relative;
 	max-width: 1920px;
-	h1 {
-		margin-top: 2rem;
-		cursor: default;
-		display: flex;
-		font-size: 2.5rem;
-		text-align: center;
-		color: white;
-		border: 4px solid #264653;
-		border-radius: 10px;
-		background-color: #264653;
-		opacity: 0.95;
-		width: 70%;
-		z-index: 7;
+	.title-holder {
 		@include breakpoint('desktop') {
-			margin-top: 20rem;
+			margin-right: 10rem;
+			margin-left: 2rem;
+		}
+		margin-left: 1rem;
+		z-index: 100;
+		h1 {
+			@include breakpoint('desktop') {
+				font-size: 10rem;
+			}
+			@include breakpoint('tablet') {
+				font-size: 7rem;
+			}
+			cursor: default;
+			font-size: 5rem;
+			color: #940094;
+			font-family: 'newakeFont';
+			/* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25); */
+			width: 100%;
+			z-index: 100;
+		}
+		h3 {
+			@include breakpoint('desktop') {
+				width: 70%;
+			}
+			cursor: default;
+			font-size: 2.5rem;
+			color: #000000;
+			font-family: 'newakeFont';
+			width: 90%;
+			z-index: 10;
 		}
 	}
+	.img-holder {
+		@include breakpoint('desktop') {
+			position: absolute;
+			display: block;
+			top: 50%;
+			right: 2%;
+		}
+		display: none;
+	}
+
 	.first {
 		position: absolute;
 		bottom: 20%;
@@ -127,8 +173,8 @@ section {
 	}
 	.third {
 		position: absolute;
-		bottom: 20%;
-		left: 5%;
+		bottom: 14%;
+		right: 5%;
 		z-index: 3;
 		height: 120px;
 		@include breakpoint('mobile') {
@@ -141,7 +187,7 @@ section {
 	.fourth {
 		position: absolute;
 		bottom: 60%;
-		left: 20%;
+		right: 20%;
 		z-index: 4;
 		height: 120px;
 		@include breakpoint('mobile') {
@@ -154,7 +200,7 @@ section {
 	.fifth {
 		position: absolute;
 		bottom: 30%;
-		left: 30%;
+		right: 30%;
 		z-index: 5;
 		height: 120px;
 		@include breakpoint('mobile') {
@@ -173,6 +219,7 @@ section {
 		animation: pulse 2s infinite;
 		animation-delay: 3s;
 		fill: white;
+		display: none;
 	}
 }
 @keyframes pulse {

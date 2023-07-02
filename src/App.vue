@@ -67,4 +67,11 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+main {
+	background-image: url('@/assets/gradient2.jpg');
+	background-size: cover; /* Cover the entire space of the element */
+	background-position: center; /* Center the background */
+	background-repeat: no-repeat; /* Do not repeat the image */
+}
+</style>

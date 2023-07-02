@@ -53,7 +53,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 section {
-	background-color: #e9c46a;
+	/* background-color: #e9c46a; */
 	padding-top: 8rem;
 	padding-bottom: 8rem;
 	display: grid;

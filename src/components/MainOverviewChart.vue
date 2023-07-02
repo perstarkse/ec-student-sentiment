@@ -104,8 +104,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 section {
-	padding-top: 9rem;
-	padding-bottom: 9rem;
+	padding-top: 6rem;
+	padding-bottom: 6rem;
 	display: grid;
 	place-items: center;
 	background-color: #f5ebe0;
