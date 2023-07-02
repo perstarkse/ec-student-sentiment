@@ -113,7 +113,7 @@ section {
 				font-size: 7rem;
 			}
 			cursor: default;
-			font-size: 5rem;
+			font-size: 4.5rem;
 			color: #940094;
 			font-family: 'newakeFont';
 			/* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25); */
@@ -123,9 +123,13 @@ section {
 		h3 {
 			@include breakpoint('desktop') {
 				width: 70%;
+				font-size: 2.5rem;
+			}
+			@include breakpoint('tablet') {
+				font-size: 2rem;
 			}
 			cursor: default;
-			font-size: 2.5rem;
+			font-size: 1.5rem;
 			color: #000000;
 			font-family: 'newakeFont';
 			width: 90%;
