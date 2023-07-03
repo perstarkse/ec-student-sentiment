@@ -62,7 +62,11 @@ export default {
 			});
 		},
 		scrollTo(selector) {
-			this.scroll.scrollTo(selector);
+			this.scroll.scrollTo(selector, {
+				duration: 1000,
+				easing: [0.25, 0.46, 0.45, 0.94],
+				offset: -300,
+			});
 		},
 	},
 	mounted() {

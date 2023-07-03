@@ -68,9 +68,9 @@ section {
 			padding-left: 5rem;
 			padding-right: 5rem;
 		}
-		* {
+		div {
 			@include breakpoint('desktop') {
-				padding-right: 10rem;
+				padding-right: 20rem;
 			}
 			padding-right: 0rem;
 		}
@@ -81,13 +81,14 @@ section {
 			display: none;
 			position: absolute;
 			top: 50px;
-			right: -50px;
+			right: 50px;
 			height: 250px;
 		}
 		p {
 			font-family: 'sans-serif';
 		}
 		h2 {
+			text-align: center;
 			font-family: 'newakeFont';
 			font-size: 3rem;
 			margin-bottom: 1rem;
