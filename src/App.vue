@@ -1,6 +1,6 @@
 <template>
 	<main ref="container">
-		<WelcomeView />
+		<WelcomeView @scrollTo="scrollTo" />
 		<MainOverviewChart />
 		<!-- <DescriptionSection
 		:purpose="purpose"
@@ -50,15 +50,19 @@ export default {
 			dataCollection: textAssets.dataCollection,
 			dataCleaning: textAssets.dataCleaning,
 			dataAnalysis: textAssets.dataAnalysis,
+			scroll: null,
 		};
 	},
 	methods: {
 		setLocomotiveScroll() {
-			new LocomotiveScroll({
+			this.scroll = new LocomotiveScroll({
 				el: this.$refs.container,
 				smooth: true,
 				multiplier: 2,
 			});
+		},
+		scrollTo(selector) {
+			this.scroll.scrollTo(selector);
 		},
 	},
 	mounted() {

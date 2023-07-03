@@ -5,6 +5,7 @@
 				<div class="title-holder" data-scroll-speed="0.5" data-scroll>
 					<h1>Student Sentiment</h1>
 					<h3>Student sentiment for the fullstack developer course.</h3>
+					<button @click="scrolldown">See the charts</button>
 				</div>
 				<div class="img-holder">
 					<img
@@ -69,7 +70,11 @@ import undrawChart from '@/assets/undraw-chart.svg';
 
 export default {
 	name: 'WelcomeView',
-	methods: {},
+	methods: {
+		scrolldown() {
+			this.$emit('scrollTo', '#main-chart');
+		},
+	},
 	components: {},
 	data() {
 		return {
@@ -78,7 +83,6 @@ export default {
 	},
 };
 </script>
-
 <style lang="scss" scoped>
 @import '../mixins.scss';
 
@@ -106,11 +110,14 @@ section {
 		margin-left: 1rem;
 		z-index: 100;
 		h1 {
+			@include breakpoint('tablet') {
+				font-size: 8rem;
+			}
 			@include breakpoint('desktop') {
 				font-size: 10rem;
 			}
-			@include breakpoint('tablet') {
-				font-size: 7rem;
+			@include breakpoint('xlarge') {
+				font-size: 12rem;
 			}
 			cursor: default;
 			font-size: 4.5rem;
@@ -120,14 +127,27 @@ section {
 			width: 100%;
 			z-index: 100;
 		}
+		button {
+			background-color: #94009448;
+			border: none;
+			border-radius: 5px;
+			padding: 4px 12px;
+			color: black;
+			cursor: pointer;
+			transition: 0.3s ease-in-out;
+			&:hover {
+				background-color: #882d88;
+			}
+		}
 		h3 {
+			@include breakpoint('tablet') {
+				font-size: 2rem;
+			}
 			@include breakpoint('desktop') {
 				width: 70%;
 				font-size: 2.5rem;
 			}
-			@include breakpoint('tablet') {
-				font-size: 2rem;
-			}
+
 			cursor: default;
 			font-size: 1.5rem;
 			color: #000000;

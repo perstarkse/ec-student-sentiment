@@ -1,6 +1,6 @@
 <template>
 	<section data-scroll-section>
-		<div class="container">
+		<div id="main-chart" class="container">
 			<h1>Sentiment overview</h1>
 			<Line :options="chartOptions" :data="chartData" />
 		</div>
