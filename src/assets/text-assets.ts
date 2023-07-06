@@ -6,7 +6,10 @@ export const textAssets = {
 		{ icon: 'web', text: 'Webpage', link: 'https://website.com' },
 		{ icon: 'linkedin', text: 'LinkedIn', link: 'https://linkedin.com' },
 	],
-	purpose: {},
+	purpose:
+		'The purpose of this project was to gain insights into the overall sentiment, emotions, and perspectives within the group, which could be helpful in decision-making. A personal note was to investigate and experiment with the usage of the OpenAI API for doing sentiment analysis and psychological analysis. The use of AI in this area has great potential to ease research in the psychology field.',
+	limitations:
+		'There are several great limitations to the validity of the analysis. 1, The interpretation done by gpt is not controlled in any way. It is taken at face value. One might argue that a qualitative analysis being done by humans also contain great potential for error. 2, The data used for analysis is from a chat group, there is some selection bias regarding who writes in the group or not, and what topics they express. ',
 	method:
 		'The tools used for this project include the DiscordChatExporter and a custom Python program called parser.py for data parsing and cleaning. DiscordChatExporter is an open-source tool, which was utilized to extract message history from various Discord channels. It supports the extraction of direct messages, group messages, server channels, and more. After exporting the message histories of the Discord channels, the parser.py program was employed to parse the data. This Python program reads the exported HTML, parses relevant information such as timestamps and message content, and organizes the data by date. The processed data is then written to a JSON file, ready for further analysis.',
 	result: {},
@@ -21,4 +24,5 @@ export const textAssets = {
 		'Following data extraction and parsing, an essential intermediate step was the data cleaning process. The goal of this phase was to ensure that the parsed data is in a suitable format for analysis by the OpenAI API and to comply with its token limits. To achieve this, a Python script was used to read each JSON file containing the parsed chat data and perform necessary cleaning tasks. This script first eliminates objects that do not contain a message or where the message is null. This simplifies the data structure and avoids unnecessary complexity during the analysis phase as well as cost. One important aspect to note is the APIs token limit. The OpenAI API restricts the size of the text that can be analyzed at one time to 4096 tokens. As such, to ensure compatibility with this limit, the script checks the size of the cleaned data. If the size exceeds this limit, the script splits the data into chunks of an appropriate size, each of which is saved in a separate JSON file. These smaller files are then ready for analysis by the OpenAI API. This data cleaning process helps to create a streamlined and efficient pipeline for analyzing the chat data, facilitating the extraction of meaningful insights. The code for the data cleaning process is outlined in cleaner.py.',
 	dataAnalysis:
 		'For the analysis of the collected and parsed Discord data, a Python script named interpreter.py was developed. This script connects to the OpenAI API and uses the GPT-4 model to perform sentiment analysis on the given text data.',
+	dataHandling: 'Finally, for ',
 };
