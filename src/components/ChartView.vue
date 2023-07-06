@@ -1,5 +1,8 @@
 <template>
-	<section data-scroll-section>
+	<section
+		data-scroll-section
+		:style="topMargin ? { 'margin-top': '6rem' } : {}"
+	>
 		<div id="main-chart" class="container">
 			<h1>{{ title }}</h1>
 			<Line :options="chartOptions" :data="dataset" />
@@ -15,6 +18,7 @@ import {
 	PointElement,
 	LineElement,
 	Title,
+	Filler,
 	Tooltip,
 	Legend,
 } from 'chart.js';
@@ -26,6 +30,7 @@ ChartJS.register(
 	PointElement,
 	LineElement,
 	Title,
+	Filler,
 	Tooltip,
 	Legend,
 );
@@ -41,6 +46,10 @@ export default {
 			type: String,
 			required: true,
 		},
+		topMargin: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	data() {
 		return {
@@ -52,8 +61,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import '../mixins.scss';
+
 section {
-	margin-top: 12rem;
+	@include breakpoint('tablet') {
+		margin-top: 12rem;
+	}
 	padding-top: 4rem;
 	padding-bottom: 6rem;
 	display: grid;
@@ -66,8 +79,11 @@ section {
 		align-items: center;
 		max-width: 1920px;
 		h1 {
+			@include breakpoint('tablet') {
+				font-size: 3rem;
+			}
 			text-align: center;
-			font-size: 3rem;
+			font-size: 2rem;
 			font-family: 'newakeFont';
 			margin-bottom: 1rem;
 		}

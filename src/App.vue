@@ -8,7 +8,11 @@
 		:result="result"
 		:conclusion="conclusion"
 	/> -->
-		<ChartView :dataset="controlData" :title="'Stress hypothesis'" />
+		<ChartView
+			:dataset="stressData"
+			:title="'Additional variables'"
+			:top-margin="true"
+		/>
 		<ProgressJournal
 			:initial-steps="initialSteps"
 			:data-collection="dataCollection"
@@ -28,7 +32,7 @@ import WelcomeView from './components/WelcomeView.vue';
 import ProgressJournal from './components/ProgressJournal.vue';
 import LocomotiveScroll from 'locomotive-scroll';
 import FinishedView from './components/FinishedView.vue';
-import { sentimentData, controlData } from '@/assets/datasets.ts';
+import { sentimentData, stressData } from '@/assets/datasets.ts';
 
 export default {
 	name: 'App',
@@ -54,7 +58,7 @@ export default {
 			dataAnalysis: textAssets.dataAnalysis,
 			scroll: null,
 			sentimentData: sentimentData,
-			controlData: controlData,
+			stressData: stressData,
 		};
 	},
 	methods: {
