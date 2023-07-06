@@ -4,7 +4,9 @@
 			<div class="container">
 				<div class="title-holder" data-scroll-speed="0.5" data-scroll>
 					<h1>Student Sentiment</h1>
-					<h3>Student sentiment for the fullstack developer course.</h3>
+					<h3>
+						Psychological analysis regarding the fullstack developer course.
+					</h3>
 					<button @click="scrolldown">See the charts</button>
 				</div>
 				<div class="img-holder">
@@ -120,6 +122,7 @@ section {
 			border: none;
 			border-radius: 5px;
 			padding: 4px 12px;
+			margin-top: 1rem;
 			color: black;
 			cursor: pointer;
 			transition: 0.3s ease-in-out;

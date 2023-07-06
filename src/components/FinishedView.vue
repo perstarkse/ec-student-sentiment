@@ -22,12 +22,14 @@ export default {
 </script>
 <style lang="scss" scoped>
 section {
-	background-color: #f4a261;
-	padding-top: 15rem;
-	padding-bottom: 25rem;
+	padding-bottom: 20rem;
 	display: grid;
 	place-items: center;
 	.container {
+		background-color: #f5ebe0;
+		padding-top: 10rem;
+		padding-bottom: 20rem;
+		width: 100%;
 		position: relative;
 		max-width: 1920px;
 		padding-left: 5rem;
