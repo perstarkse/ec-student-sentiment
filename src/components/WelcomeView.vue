@@ -47,24 +47,10 @@
 						src="../assets/stars.png"
 					/>
 				</div>
-				<div style="text-align: center">
-					<svg
-						class="scroll-down"
-						xmlns="http://www.w3.org/2000/svg"
-						height="1em"
-						viewBox="0 0 512 512"
-					>
-						<!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-						<path
-							d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
-						/>
-					</svg>
-				</div>
 			</div>
 		</section>
 	</main>
 </template>
-
 <script>
 import undrawChart from '@/assets/undraw-chart.svg';
 
@@ -93,22 +79,24 @@ section {
 	align-items: center;
 }
 .container {
-	display: grid;
+	display: flex;
 	height: 100vh;
-	place-items: center;
 	position: relative;
 	max-width: 1920px;
 	.title-holder {
 		@include breakpoint('desktop') {
 			margin-right: 10rem;
 			margin-left: 2rem;
+			margin-top: 10vh;
 		}
 		@include breakpoint('xlarge') {
 			margin-right: 30rem;
+			margin-top: 15vh;
 			margin-left: 2rem;
 		}
 		margin-left: 1rem;
 		z-index: 100;
+		margin-top: 25vh;
 		h1 {
 			@include breakpoint('tablet') {
 				font-size: 8rem;

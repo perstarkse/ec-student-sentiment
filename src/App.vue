@@ -1,13 +1,14 @@
 <template>
 	<main ref="container">
 		<WelcomeView @scrollTo="scrollTo" />
-		<MainOverviewChart />
+		<ChartView :dataset="sentimentData" :title="'Sentiment overview'" />
 		<!-- <DescriptionSection
 		:purpose="purpose"
 		:method="method"
 		:result="result"
 		:conclusion="conclusion"
 	/> -->
+		<ChartView :dataset="controlData" :title="'Stress hypothesis'" />
 		<ProgressJournal
 			:initial-steps="initialSteps"
 			:data-collection="dataCollection"
@@ -21,18 +22,19 @@
 <script>
 // import DropdownMenu from './components/DropdownMenu.vue';
 import { textAssets } from './assets/text-assets.ts';
-import MainOverviewChart from './components/MainOverviewChart.vue';
+import ChartView from './components/ChartView.vue';
 import WelcomeView from './components/WelcomeView.vue';
 // import DescriptionSection from './components/DescriptionSection.vue';
 import ProgressJournal from './components/ProgressJournal.vue';
 import LocomotiveScroll from 'locomotive-scroll';
 import FinishedView from './components/FinishedView.vue';
+import { sentimentData, controlData } from '@/assets/datasets.ts';
 
 export default {
 	name: 'App',
 	components: {
 		// DropdownMenu,
-		MainOverviewChart,
+		ChartView,
 		WelcomeView,
 		// DescriptionSection,
 		ProgressJournal,
@@ -51,6 +53,8 @@ export default {
 			dataCleaning: textAssets.dataCleaning,
 			dataAnalysis: textAssets.dataAnalysis,
 			scroll: null,
+			sentimentData: sentimentData,
+			controlData: controlData,
 		};
 	},
 	methods: {
