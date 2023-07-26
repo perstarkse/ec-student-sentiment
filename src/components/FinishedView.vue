@@ -8,9 +8,9 @@
 				me.
 			</p>
 			<div class="socials">
-				<a href="https://www.linkedin.com/in/alexander-lee-1b1b3b1b0/">
-					<!-- <img src="../assets/linkedin.svg" alt="linkedin" /> -->
-				</a>
+				<div v-for="social in socials" :key="social.text">
+					<a :href="social.link"><i></i><h4>{{ social.text }}</h4></a>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -18,11 +18,14 @@
 <script>
 export default {
 	name: 'FinishedView',
+	props: {
+		socials: Array,
+	},
 };
 </script>
 <style lang="scss" scoped>
 section {
-	padding-bottom: 20rem;
+	padding-bottom: 15rem;
 	display: grid;
 	place-items: center;
 	.container {
@@ -50,6 +53,18 @@ section {
 		p {
 			margin-bottom: 2rem;
 			font-family: 'sans-serif';
+		}
+		.socials {
+			gap: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+			a {color: black;
+			text-decoration: none;
+		&:hover {
+			color: #6c6c6c;
+		}}
 		}
 	}
 }

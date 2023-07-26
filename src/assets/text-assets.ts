@@ -2,9 +2,9 @@ export const textAssets = {
 	introduction:
 		'The project, titled "Webbutvecklare Distans Gänget - Sentiment Tracker," is focused on performing sentiment analysis on a Discord group used by students of the EC Fullstack .NET webbutvecklare program. The analysis will help gain insights into the overall sentiment, emotions, and perspectives within the group, which could be instrumental in decision-making or for deriving insights into the group dynamics.',
 	socials: [
-		{ icon: 'twitter', text: 'Twitter', link: 'https://twitter.com' },
-		{ icon: 'web', text: 'Webpage', link: 'https://website.com' },
-		{ icon: 'linkedin', text: 'LinkedIn', link: 'https://linkedin.com' },
+		{ icon: 'github', text: 'Github', link: 'https://github.com/perstarkse' },
+		{ icon: 'web', text: 'Personal webpage', link: 'https://perstark.xyz' },
+		{ icon: 'linkedin', text: 'LinkedIn', link: 'https://linkedin.com/in/per-stark' },
 	],
 	purpose:
 		'The purpose of this project was to gain insights into the overall sentiment, emotions, and perspectives within the group, which could be helpful in decision-making. A personal note was to investigate and experiment with the usage of the OpenAI API for doing sentiment analysis and psychological analysis. The use of AI in this area has great potential to ease research in the psychology field.',
@@ -15,14 +15,13 @@ export const textAssets = {
 	result: {},
 	conclusion: {},
 	initialSteps:
-		'The project started with obtaining the necessary tokens and information according to the guidelines provided by DiscordChatExporter.',
+		' The project commences with the establishment of essential prerequisites. The tokens and information necessary to initiate the process are gathered as per the guidelines provided by DiscordChatExporter.',
 	dataCollection:
-		'Data extraction was carried out using DiscordChatExporter from different Discord channels. These included specific channels dedicated to different courses (e.g., "html-css", "javascript-frontend", "c-sharp", "datalagring", "asp-net") and several general discussion channels (e.g., "allmänt-skolan", "orelaterat-till-plugget"). The extraction did not include voice channels.',
+		'In this phase, raw chat data is extracted from various Discord channels, including channels dedicated to specific academic courses and general discussion channels. The extraction is performed using DiscordChatExporter, a tool designed to retrieve data efficiently.',
 	dataParsing:
-		'With the data extracted in HTML format, the next step was to parse and clean this data. The Python program parser.py was developed to handle this task. It uses the BeautifulSoup library for HTML parsing and structures the parsed data in a JSON format. This step also involves anonymization of data to ensure privacy. Please refer to parser.py for the detailed code.',
+		'After the data has been collected, it undergoes parsing. A Python script reads each JSON file containing the chat data, interpreting the content and structuring it into a manageable format. This stage essentially turns the raw data into a structured dataset that can be further cleaned and analyzed.',
 	dataCleaning:
-		'Following data extraction and parsing, an essential intermediate step was the data cleaning process. The goal of this phase was to ensure that the parsed data is in a suitable format for analysis by the OpenAI API and to comply with its token limits. To achieve this, a Python script was used to read each JSON file containing the parsed chat data and perform necessary cleaning tasks. This script first eliminates objects that do not contain a message or where the message is null. This simplifies the data structure and avoids unnecessary complexity during the analysis phase as well as cost. One important aspect to note is the APIs token limit. The OpenAI API restricts the size of the text that can be analyzed at one time to 4096 tokens. As such, to ensure compatibility with this limit, the script checks the size of the cleaned data. If the size exceeds this limit, the script splits the data into chunks of an appropriate size, each of which is saved in a separate JSON file. These smaller files are then ready for analysis by the OpenAI API. This data cleaning process helps to create a streamlined and efficient pipeline for analyzing the chat data, facilitating the extraction of meaningful insights. The code for the data cleaning process is outlined in cleaner.py.',
+		'This phase involves the removal of unnecessary or irrelevant data to streamline the dataset for analysis. The Python script filters out elements that don not contain a message or where the message is null. It is a crucial step, ensuring the data is formatted appropriately for analysis by the OpenAI API and to comply with the token limits. If the data size exceeds the limit, the script splits it into appropriately sized chunks, saved as separate JSON objects.',
 	dataAnalysis:
-		'For the analysis of the collected and parsed Discord data, a Python script named interpreter.py was developed. This script connects to the OpenAI API and uses the GPT-4 model to perform sentiment analysis on the given text data.',
-	dataHandling: 'Finally, for ',
+		'The final step is the analysis of the cleaned and parsed data. The Python script connects to the OpenAI API and uses the GPT-4 model to perform sentiment analysis on the data. It aims to gauge the sentiments expressed in the chat data and generate meaningful insights into the overall mood and engagement within the Discord channels.',
 };
