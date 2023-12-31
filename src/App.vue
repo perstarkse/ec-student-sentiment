@@ -1,16 +1,15 @@
 <template>
   <main ref="container">
     <WelcomeView @scrollTo="scrollTo" />
-    <ChartView :dataset="sentimentData" :title="'Sentiment overview'" />
-    <!-- <DescriptionSection
-		:purpose="purpose"
-		:method="method"
-		:result="result"
-		:conclusion="conclusion"
-	/> -->
+    <ChartView
+      :dataset="sentimentData"
+      :title="'Sentiment overview'"
+      :description="'The chart measures sentiment on a scale from 0 to 100, where 100 represents a completely positive or favorable mood, and 0 indicates a very negative or unfavorable mood'"
+    />
     <ChartView
       :dataset="stressData"
       :title="'Additional variables'"
+      :description="'The chart measures expressed degrees of control, experienced demands, support as well as the general semtiments of the students. By pressing the buttons below you can toggle that variable.'"
       :top-margin="true"
     />
     <ProgressJournal
@@ -24,11 +23,9 @@
 </template>
 
 <script>
-// import DropdownMenu from './components/DropdownMenu.vue';
 import { textAssets } from "./assets/text-assets.ts";
 import ChartView from "./components/ChartView.vue";
 import WelcomeView from "./components/WelcomeView.vue";
-// import DescriptionSection from './components/DescriptionSection.vue';
 import ProgressJournal from "./components/ProgressJournal.vue";
 import LocomotiveScroll from "locomotive-scroll";
 import FinishedView from "./components/FinishedView.vue";
@@ -37,10 +34,8 @@ import { sentimentData, stressData } from "@/assets/datasets.ts";
 export default {
   name: "App",
   components: {
-    // DropdownMenu,
     ChartView,
     WelcomeView,
-    // DescriptionSection,
     ProgressJournal,
     FinishedView,
   },
@@ -89,9 +84,9 @@ export default {
   src: url("~@/assets/fonts/Newake-Font-Demo.otf") format("opentype");
 }
 main {
-  background-image: url("@/assets/gradient2.jpg");
-  background-size: cover; /* Cover the entire space of the element */
-  background-position: center; /* Center the background */
-  background-repeat: no-repeat; /* Do not repeat the image */
+  background-image: url("@/assets/optiwebp.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 </style>
