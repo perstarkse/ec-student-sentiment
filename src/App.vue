@@ -74,6 +74,15 @@ export default {
   },
   mounted() {
     this.setLocomotiveScroll();
+
+    // calculate the amount of total messages in stressdata
+    // let totalMessages = 0;
+    // for (const course of sentimentData.datasets) {
+    //   for (const week of course.data) {
+    //     totalMessages += week.num_messages;
+    //   }
+    // }
+    // console.log(totalMessages);
   },
 };
 </script>
