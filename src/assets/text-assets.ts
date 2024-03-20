@@ -3,7 +3,7 @@ export const textAssets = {
     'The project, titled "Webbutvecklare Distans Gänget - Sentiment Tracker," is focused on performing sentiment analysis on a Discord group used by students of the EC Fullstack .NET webbutvecklare program. The analysis will help gain insights into the overall sentiment, emotions, and perspectives within the group, which could be instrumental in decision-making or for deriving insights into the group dynamics.',
   socials: [
     { icon: "github", text: "Github", link: "https://github.com/perstarkse" },
-    { icon: "web", text: "Personal webpage", link: "https://perstark.xyz" },
+    { icon: "web", text: "Personal webpage", link: "https://cv.perstark.xyz" },
     {
       icon: "linkedin",
       text: "LinkedIn",
