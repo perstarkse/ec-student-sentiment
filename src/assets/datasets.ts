@@ -1,3 +1,30 @@
+export const correlationData = {
+  labels: [""],
+  datasets: [
+    {
+      label: "Control-Sentiment Correlation",
+      data: [0.47675679638590235],
+      backgroundColor: ["rgba(75, 192, 192, 0.6)"],
+      borderColor: ["rgba(75, 192, 192, 1)"],
+      borderWidth: 1,
+    },
+    {
+      label: "Demand-Sentiment Correlation",
+      data: [-0.26765497897453805],
+      backgroundColor: ["rgba(255, 99, 132, 0.6)"],
+      borderColor: ["rgba(255, 99, 132, 1)"],
+      borderWidth: 1,
+    },
+    {
+      label: "Support-Sentiment Correlation",
+      data: [0.24678697464239036],
+      backgroundColor: ["rgba(54, 162, 235, 0.6)"],
+      borderColor: ["rgba(54, 162, 235, 1)"],
+      borderWidth: 1,
+    },
+  ],
+};
+
 export const sentimentData = {
   datasets: [
     {
